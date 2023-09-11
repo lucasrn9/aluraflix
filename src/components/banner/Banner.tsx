@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Button from '../button/Button'
+import Category from '../category/Category'
 
 const StyledBanner = styled.section`
   width: 100%;
@@ -54,28 +55,6 @@ const StyledBannerContent = styled.div`
   @media (min-width: 1100px) {
     margin-top: 12rem;
     margin-right: 1rem;
-  }
-`
-const CategoryTag = styled.div`
-  display: none;
-  align-items: center;
-  width: fit-content;
-  padding: 0 1.5rem;
-  border-radius: 4px;
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  color: ${({ theme }) => theme.colors.grayLight};
-  background-color: ${({ theme }) => theme.colors.frontEnd};
-  @media (min-width: 768px) {
-    display: flex;
-    font-size: 2rem;
-    height: 52px;
-  }
-  @media (min-width: 1100px) {
-    height: 92px;
-    font-size: 3.75rem;
   }
 `
 const StyledVideoTitle = styled.h2`
@@ -140,7 +119,7 @@ const Banner = () => {
     <StyledBanner>
       <StyledBannerWrapper>
         <StyledBannerContent>
-          <CategoryTag>Front End</CategoryTag>
+          <Category size="big">Front End</Category>
           <StyledVideoTitle>SEO com React</StyledVideoTitle>
           <StyledVideoDescription>
             Esse desafio é uma forma de aprendizado. É um mecanismo onde você

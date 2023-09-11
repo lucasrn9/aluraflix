@@ -5,6 +5,8 @@ const theme = {
     blackLighter: '#9E9E9E',
     frontEnd: '#6BD1FF',
     grayLight: '#F5F5F5',
+    grayDark: '#C2C2C2',
+    grayMedium: '#53585D',
   },
 }
 

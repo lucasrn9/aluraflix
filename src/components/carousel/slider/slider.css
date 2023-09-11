@@ -1,0 +1,11 @@
+.slick-slide {
+  margin-right: 6px;
+}
+.slick-slide:last-child {
+  margin-right: 0;
+}
+@media screen and (min-width: 768px) {
+  .slick-slide {
+    margin-right: 22px;
+  }
+}
