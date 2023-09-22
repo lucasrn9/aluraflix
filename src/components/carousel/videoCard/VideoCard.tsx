@@ -1,32 +1,28 @@
-import styled from 'styled-components'
-
-const StyledVideoCard = styled.div<{ $borderColor: string }>`
-  width: 291px;
-  height: 172.264px;
-  border-radius: 4px;
-  border: 2px solid ${({ theme, $borderColor }) => theme.colors[$borderColor]};
-  @media (min-width: 768px) {
-    width: 432px;
-    height: 260.85px;
-  }
-`
-const StyledVideoImg = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`
+import {
+  StyledVideoCard,
+  StyledVideoImg,
+  StyledVideoLink,
+} from './videoCardStyles'
 
 interface videoCardProps {
   imgSrc: string
   imgAlt: string
   borderColor: string
+  videoSrc: string
 }
 
-const VideoCard = ({ imgSrc, imgAlt, borderColor }: videoCardProps) => {
+const VideoCard = ({
+  imgSrc,
+  imgAlt,
+  borderColor,
+  videoSrc,
+}: videoCardProps) => {
   return (
-      <StyledVideoCard $borderColor={borderColor}>
+    <StyledVideoCard $borderColor={borderColor}>
+      <StyledVideoLink href={videoSrc} target="_blank">
         <StyledVideoImg src={imgSrc} alt={imgAlt} />
-      </StyledVideoCard>
+      </StyledVideoLink>
+    </StyledVideoCard>
   )
 }
 

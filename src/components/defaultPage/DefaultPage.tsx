@@ -3,14 +3,15 @@ import Header from '../header/Header'
 
 interface defaultPageProps {
   children: JSX.Element | JSX.Element[]
+  noFooter?: boolean
 }
 
-const DefaultPage = ({ children }: defaultPageProps) => {
+const DefaultPage = ({ children, noFooter = false }: defaultPageProps) => {
   return (
     <>
       <Header />
       {children}
-      <Footer />
+      {noFooter || <Footer />}
     </>
   )
 }

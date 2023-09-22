@@ -1,137 +1,94 @@
-import styled from 'styled-components'
-import Button from '../button/Button'
 import Category from '../category/Category'
-
-const StyledBanner = styled.section`
-  width: 100%;
-  margin-top: 0.37rem;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2.9rem;
-`
-const StyledBannerWrapper = styled.div`
-  height: 179px;
-  width: 100%;
-  max-width: 340px;
-  position: relative;
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../../../public/imgs/player--big.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: brightness(40%);
-  }
-  @media (min-width: 768px) {
-    max-width: 1440px;
-    height: 868px;
-    padding: 0 2.69rem 0 2.94rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  @media (min-width: 1100px) {
-    flex-direction: row;
-    align-items: unset;
-    justify-content: space-between;
-  }
-`
-const StyledBannerContent = styled.div`
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) translateY(51%);
-  bottom: 0;
-  @media (min-width: 768px) {
-    transform: translateX(0) translateY(0);
-    position: static;
-    width: 100%;
-    max-width: 661px;
-    margin-top: 2rem;
-  }
-  @media (min-width: 1100px) {
-    margin-top: 12rem;
-    margin-right: 1rem;
-  }
-`
-const StyledVideoTitle = styled.h2`
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-bottom: 1.9rem;
-  color: ${({ theme }) => theme.colors.grayLight};
-  @media (min-width: 768px) {
-    text-align: unset;
-    font-size: 2.875rem;
-    margin: 2.5rem 0 0.56rem 0;
-  }
-`
-const StyledVideoDescription = styled.p`
-  display: none;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  color: ${({ theme }) => theme.colors.grayLight};
-  @media (min-width: 768px) {
-    display: block;
-  }
-`
-
-const StyledWatchButton = styled(Button)`
-  @media (min-width: 768px) {
-    display: none;
-  }
-`
-
-const StyledPlayerWrapper = styled.div`
-  display: none;
-  position: relative;
-  width: 100%;
-  margin-top: 10.56rem;
-  max-width: 646px;
-  height: 333.582px;
-  border-radius: 4px;
-  border: 4px solid ${({ theme }) => theme.colors.frontEnd};
-  @media (min-width: 768px) {
-    display: block;
-    margin-top: 2rem;
-  }
-  @media (min-width: 1100px) {
-    margin-top: 10.56rem;
-  }
-`
-const StyledPlayerImg = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`
+import VideoCard from '../carousel/videoCard/VideoCard'
+import { useEffect, useState } from 'react'
+import { getCategories } from '../../services/categories/categories'
+import { getVideos } from '../../services/videos/videos'
+import {
+  StyledBanner,
+  StyledBannerCarousel,
+  StyledBannerContent,
+  StyledBannerWrapper,
+  StyledPlayerImg,
+  StyledPlayerVideoLink,
+  StyledPlayerWrapper,
+  StyledVideoDescription,
+  StyledVideoTitle,
+  StyledWatchButton,
+} from './bannerStyles'
 
 const Banner = () => {
+  const [categories, setCategories] = useState([
+    {
+      id: 1,
+      categoryName: 'Front End',
+      categoryDescription: '',
+      color: '',
+    },
+  ])
+  const [videos, setVideos] = useState([
+    {
+      id: 1,
+      category: 'Front End',
+      imgSrc: '',
+      videoSrc: '',
+      title: '',
+      description: '',
+      user: '',
+    },
+  ])
+  useEffect(() => {
+    const fetchData = async () => {
+      const resCategories = await getCategories()
+      const resVideos = await getVideos()
+      setCategories(resCategories)
+      setVideos(resVideos)
+    }
+    fetchData()
+  }, [])
+  const frontendCategory = categories.filter(
+    (category) => category.categoryName === 'Front End'
+  )[0]
+  const frontendVideos = videos.filter(
+    (video) => video.category === frontendCategory.categoryName
+  )
   return (
     <StyledBanner>
       <StyledBannerWrapper>
         <StyledBannerContent>
-          <Category size="big">Front End</Category>
+          <Category color={frontendCategory.color} size="big">
+            {frontendCategory.categoryName}
+          </Category>
           <StyledVideoTitle>SEO com React</StyledVideoTitle>
           <StyledVideoDescription>
             Esse desafio é uma forma de aprendizado. É um mecanismo onde você
             pode se engajar na resolução de um problema para poder aplicar todo
             o conhecimento adquirido na Formação React.
           </StyledVideoDescription>
-          <StyledWatchButton $variant="white">Assistir</StyledWatchButton>
+          <StyledWatchButton variant="white">Assistir</StyledWatchButton>
         </StyledBannerContent>
         <StyledPlayerWrapper>
-          <StyledPlayerImg src="../../../public/imgs/player.jpg" alt="" />
+          <StyledPlayerVideoLink
+            href={frontendVideos[0].videoSrc}
+            target="_blank"
+          >
+            <StyledPlayerImg
+              src="../../../public/imgs/player.jpg"
+              alt="video da alura de SEO com React"
+            />
+          </StyledPlayerVideoLink>
         </StyledPlayerWrapper>
       </StyledBannerWrapper>
+      <StyledBannerCarousel>
+        {frontendVideos.map((frontendVideo) => (
+          <VideoCard
+            key={frontendVideo.id}
+            borderColor={frontendCategory.color}
+            imgSrc={frontendVideo.imgSrc}
+            imgAlt={`${frontendVideo.category} video`}
+            videoSrc={frontendVideo.videoSrc}
+          />
+        ))}
+      </StyledBannerCarousel>
     </StyledBanner>
   )
 }
