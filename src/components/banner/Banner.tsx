@@ -72,7 +72,7 @@ const Banner = () => {
             target="_blank"
           >
             <StyledPlayerImg
-              src="../../../public/imgs/player.jpg"
+              src="../imgs/player.jpg"
               alt="video da alura de SEO com React"
             />
           </StyledPlayerVideoLink>

@@ -25,7 +25,7 @@ export const StyledBannerWrapper = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../../../public/imgs/player--big.jpg');
+    background: url('../imgs/player--big.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     filter: brightness(40%);
