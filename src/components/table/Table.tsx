@@ -62,7 +62,6 @@ const Table = ({ categories, setEditCategoryVisibility }: tableProps) => {
                 onClick={async () => {
                   await deleteCategory(category.id)
                   window.alert('categoria deletada com sucesso')
-                  window.location.reload()
                 }}
               >
                 Remover
