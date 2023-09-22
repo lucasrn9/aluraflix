@@ -29,9 +29,9 @@ export const getVideos = async () => {
 
 export const postVideo = async (videoBody: videoBody) => {
   const videos = JSON.parse(localStorage.getItem('videos')!)
-  videos.push(videoBody)
-  localStorage.setItem('videos', JSON.stringify(videos))
   const currentHighestId = parseInt(localStorage.getItem('videoHighestId')!)
+  videos.push({ ...videoBody, id: currentHighestId + 1 })
+  localStorage.setItem('videos', JSON.stringify(videos))
   localStorage.setItem('videoHighestId', JSON.stringify(currentHighestId + 1))
   return videos
 }

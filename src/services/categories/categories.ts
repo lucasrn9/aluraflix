@@ -39,9 +39,9 @@ export const getCategory = async (id: number) => {
 
 export const postCategory = async (categoryBody: categoryBody) => {
   const categories = await JSON.parse(localStorage.getItem('categories')!)
-  categories.push(categoryBody)
-  localStorage.setItem('categories', JSON.stringify(categories))
   const currentHighestId = parseInt(localStorage.getItem('categoryHighestId')!)
+  categories.push({ ...categoryBody, id: currentHighestId + 1 })
+  localStorage.setItem('categories', JSON.stringify(categories))
   localStorage.setItem(
     'categoryHighestId',
     JSON.stringify(currentHighestId + 1)
