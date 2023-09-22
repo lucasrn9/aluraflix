@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <StyledFooter>
       <StyledLogoContainer>
-        <StyledLogo src="../../../public/imgs/logo--big.png" />
+        <StyledLogo src="../imgs/logo--big.png" />
       </StyledLogoContainer>
       <StyledParagraph>
         Site feito na <StyledStrong>#ImersãoReact</StyledStrong> da

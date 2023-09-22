@@ -14,7 +14,7 @@ const Header = () => {
       <Container>
         <StyledHeaderWrapper>
           <StyledLogoContainer>
-            <StyledLogo src="../../../public/imgs/logo--big.png" />
+            <StyledLogo src="../imgs/logo--big.png" />
           </StyledLogoContainer>
           <StyledLink to="/video">
             <StyledNewVideoBtn variant="white--outlined">
