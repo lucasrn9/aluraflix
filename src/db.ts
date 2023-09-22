@@ -2,7 +2,7 @@ export const videosDb = [
   {
     id: 1,
     category: 'Front End',
-    imgSrc: '../public/imgs/frontend--1.jpg',
+    imgSrc: '../imgs/frontend--1.jpg',
     videoSrc: 'https://www.youtube.com/watch?v=Z-N5Fr9P-GU',
     title: '',
     description: '',
@@ -11,7 +11,7 @@ export const videosDb = [
   {
     id: 2,
     category: 'Front End',
-    imgSrc: '../public/imgs/frontend--2.jpg',
+    imgSrc: '../imgs/frontend--2.jpg',
     videoSrc: 'https://www.youtube.com/watch?v=6IuQUgeDPg0',
     title: '',
     description: '',
@@ -20,7 +20,7 @@ export const videosDb = [
   {
     id: 3,
     category: 'Front End',
-    imgSrc: '../public/imgs/frontend--3.jpg',
+    imgSrc: '../imgs/frontend--3.jpg',
     videoSrc: 'https://www.youtube.com/watch?v=KdQa4Rd6K1A',
     title: '',
     description: '',
@@ -29,7 +29,7 @@ export const videosDb = [
   {
     id: 4,
     category: 'Front End',
-    imgSrc: '../public/imgs/frontend--4.png',
+    imgSrc: '../imgs/frontend--4.png',
     videoSrc: 'https://www.youtube.com/watch?v=KdQa4Rd6K1A',
     title: '',
     description: '',
@@ -38,7 +38,7 @@ export const videosDb = [
   {
     id: 5,
     category: 'Data Science',
-    imgSrc: '../public/imgs/dataScience--1.jpg',
+    imgSrc: '../imgs/dataScience--1.jpg',
     videoSrc: 'https://www.youtube.com/watch?v=Kk3vBRqKA2o',
     title: '',
     description: '',
@@ -47,7 +47,7 @@ export const videosDb = [
   {
     id: 6,
     category: 'Data Science',
-    imgSrc: '../public/imgs/dataScience--2.jpg',
+    imgSrc: '../imgs/dataScience--2.jpg',
     videoSrc: 'https://www.youtube.com/watch?v=K-eaT4V8j-w',
     title: '',
     description: '',
@@ -56,7 +56,7 @@ export const videosDb = [
   {
     id: 7,
     category: 'Data Science',
-    imgSrc: '../public/imgs/dataScience--3.jpg',
+    imgSrc: '../imgs/dataScience--3.jpg',
     videoSrc: 'https://www.youtube.com/watch?v=qYhixp5qxTc',
     title: '',
     description: '',
@@ -65,7 +65,7 @@ export const videosDb = [
   {
     id: 8,
     category: 'Data Science',
-    imgSrc: '../public/imgs/dataScience--4.png',
+    imgSrc: '../imgs/dataScience--4.png',
     videoSrc: 'https://www.youtube.com/watch?v=AE214uRJ2UQ',
     title: '',
     description: '',
@@ -74,7 +74,7 @@ export const videosDb = [
   {
     id: 9,
     category: 'Mobile',
-    imgSrc: '../public/imgs/mobile--1.jpg',
+    imgSrc: '../imgs/mobile--1.jpg',
     videoSrc: 'https://www.youtube.com/watch?v=4AH9H_dx_7g',
     title: '',
     description: '',
@@ -83,7 +83,7 @@ export const videosDb = [
   {
     id: 10,
     category: 'Mobile',
-    imgSrc: '../public/imgs/mobile--2.jpg',
+    imgSrc: '../imgs/mobile--2.jpg',
     videoSrc: 'https://www.youtube.com/watch?v=uXA8jLSuPNA',
     title: '',
     description: '',
@@ -92,7 +92,7 @@ export const videosDb = [
   {
     id: 11,
     category: 'Mobile',
-    imgSrc: '../public/imgs/mobile--3.jpg',
+    imgSrc: '../imgs/mobile--3.jpg',
     videoSrc: 'https://www.youtube.com/watch?v=ly8e6WB0YQo',
     title: '',
     description: '',
@@ -101,7 +101,7 @@ export const videosDb = [
   {
     id: 12,
     category: 'Mobile',
-    imgSrc: '../public/imgs/mobile--4.png',
+    imgSrc: '../imgs/mobile--4.png',
     videoSrc:
       'https://learn.microsoft.com/en-us/shows/xamarinshow/xamarinforms-101-xaml-previewer',
     title: '',
