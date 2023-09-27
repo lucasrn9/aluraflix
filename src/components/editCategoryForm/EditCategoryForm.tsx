@@ -38,7 +38,7 @@ const EditCategoryForm = ({
         }}
       >
         <StyledCloseBtnIcon
-          src="../../../public/imgs/close_icon.svg"
+          src="../imgs/close_icon.svg"
           alt="A image of an X, working as a close icon"
         />
       </StyledCloseBtn>
